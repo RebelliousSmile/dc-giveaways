@@ -1,0 +1,28 @@
+.
+├── jsdoc.json
+├── locales
+│   ├── en.yml
+│   └── fr.yml
+├── package.json
+├── package-lock.json
+├── README.md
+└── src
+    ├── commands
+    │   └── giveways
+    ├── commands.js
+    ├── config
+    │   ├── app.js
+    │   └── pg.js
+    ├── events
+    ├── helpers
+    │   └── ids.js
+    ├── index.js
+    ├── models
+    │   ├── giveaway.js
+    │   └── pg.js
+    ├── tests
+    │   └── giveaway.test.js
+    └── utils
+        └── translator.js
+
+10 directories, 15 files
