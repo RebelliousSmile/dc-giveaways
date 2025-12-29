@@ -160,10 +160,11 @@ class Giveaway {
       if (result.rows.length > 0) {
         this.members = result.rows;
         return this.members;
-      }        
+      }
+      return [];
     } else {
-      return this.members;
-    }      
+      return this.members || [];
+    }
   }
 
   /**
