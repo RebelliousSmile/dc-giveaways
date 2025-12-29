@@ -220,7 +220,7 @@ class Giveaway {
     _chooseIndexRandomly(slug, participantsCount) {
       const hash = crypto
         .createHash('md5')
-        .update(slug)
+        .update(generateMemberId())
         .digest('hex')
       const hashPrefix = hash.substring(0, 8)
       return Math.floor(
