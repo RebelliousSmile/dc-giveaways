@@ -1,6 +1,6 @@
 const pgConfig = require('../config/pg.js');
 const { Pool } = require('pg');
-// const { generateDocumentId, generateMemberId } = require('../helpers/ids');
+const { generateMemberId } = require('../helpers/ids');
 const crypto = require('crypto');
 
 const pool = new Pool({
