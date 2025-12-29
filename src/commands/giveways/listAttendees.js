@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const Giveaway = require('../../models/giveaway.js');
 const { memberProfile } = require('../../helpers/ids.js');
 const translator = require('../../utils/translator');
@@ -16,7 +16,7 @@ module.exports = {
         /**
          * gestion des droits
          */
-        if (!interaction.member.permissions.has('ADMINISTRATOR')) {
+        if (!interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
             await interaction.reply({ content: translator.translate('forbidden_message', appConfig.language), ephemeral: true });
             return;
         }
