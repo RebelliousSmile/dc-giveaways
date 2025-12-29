@@ -222,16 +222,18 @@ class Giveaway {
 
     // pick a random winner
     const pretenders = members.filter(member => member.win === false);
-    const winner = pretenders[this._chooseIndexRandomly(this.slug, pretenders.length)];
-    
+    const winnerIndex = this._chooseIndexRandomly(this.slug, pretenders.length);
+    const winner = pretenders[winnerIndex];
 
     // write information in the database
-    const member = new GiveawayMember(this.id, winner.memberId);            
+    const member = new GiveawayMember(this.id, winner.memberId);
     await member.retrieve();
     member.setWin(member.id);
 
     // save information in giveaway
     this.winnerId = member.memberId;
+    this.winnerIndex = winnerIndex + 1; // 1-based index
+    this.totalPretenders = pretenders.length;
     this.setNow('Le gagnant est u' + this.winnerId + 'u ! Félicitations à lui/elle !');
     this.save();
 

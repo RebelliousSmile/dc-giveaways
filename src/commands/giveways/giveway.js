@@ -42,6 +42,6 @@ module.exports = {
             return;
         }
         
-        await interaction.reply({ content: `Le gagnant du giveaway ${giveaway.slug} est ${memberProfile(winner)}`, ephemeral: false });
+        await interaction.reply({ content: `Le gagnant du giveaway ${giveaway.slug} est ${memberProfile(winner)} [#${giveaway.winnerIndex}/${giveaway.totalPretenders}]`, ephemeral: false });
     },
 };
