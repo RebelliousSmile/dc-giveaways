@@ -16,7 +16,7 @@ module.exports = {
         /**
          * gestion des droits
          */
-        if (!interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
+        if (!appConfig.debugMode && !interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
             await interaction.reply({ content: translator.translate('forbidden_message', appConfig.language), ephemeral: true });
             return;
         }
